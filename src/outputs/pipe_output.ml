@@ -120,7 +120,8 @@ object (self)
     open_date <- Unix.gettimeofday () 
 
   method output_start =
-    assert (not (self#is_open) && encoder = None) ;
+    assert (not (self#is_open));
+    assert (encoder = None) ;
     let enc = encoder_factory self#id in
     let meta = 
       match current_metadata with
